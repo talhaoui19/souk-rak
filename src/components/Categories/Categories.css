@@ -1,0 +1,13 @@
+.categories .categorie-box-img {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.categories .air-puds  {
+    background-image: url("../../assets/images/Categories/gradient1.png");
+    height: 100%;
+}
+
+.categories .watch  {
+    background-image: url("../../assets/images/Categories/gradient2.png");
+    height: 100%;
+}

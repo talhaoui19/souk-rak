@@ -1,0 +1,187 @@
+/* CARIO FONT */
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color: #26b356;
+  --white-color: #fff;
+  --paragraph-color: #323641;
+  --text-color: #888b98;
+  --sec-color: #2b2f4e;
+  --third-color: #2b2f4e;
+  --trans-duration: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+.font {
+  font-family: "Almarai", sans-serif;
+}
+
+body {
+  background-color: #fbfafa;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer !important;
+}
+
+img {
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+select {
+  outline: none;
+}
+
+.question-box {
+  box-shadow: 0px 1px 2px 0px #5569871a;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.contact-boxs ::selection,
+.doctors ::selection {
+  background-color: var(--white-color);
+  color: var(--main-color);
+}
+
+.transition {
+  transition: var(--trans-duration);
+}
+
+/* SATRT ANIMATON */
+.animation {
+  animation: animation 0.8s;
+}
+
+@keyframes animation {
+  0% {
+    scale: 0;
+  }
+
+  50% {
+    scale: 1.1;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+/* END ANIMATON */
+
+@layer base {
+  input::placeholder {
+    @apply text-[15px];
+  }
+  .input::placeholder {
+    @apply text-[white] pr-2;
+  }
+  select {
+    @apply appearance-none;
+    -webkit-appearance: none;
+  }
+  .--spr {
+    @apply w-5 h-5 m-[2px] mx-auto rounded-full border-[3px] border-solid border-white border-r-transparent animate-spin;
+  }
+  .--but {
+    @apply bg-[#26B356] text-[14px] font-bold text-white w-[370px] h-[54px] rounded-[10px];
+  }
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("../assets/down_icon.svg") no-repeat left 18px center;
+  background-size: 14px;
+  cursor: pointer;
+}
+
+.avatar-upload {
+  position: relative;
+  max-width: 205px;
+  .avatar-edit {
+    position: absolute;
+    left: 35px;
+    z-index: 1;
+    bottom: 10px;
+    input {
+      display: none;
+      + a {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        border-radius: 100%;
+        background: #ffffff;
+        border: 1px solid transparent;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          background: #f1f1f1;
+          border-color: #d6d6d6;
+        }
+      }
+    }
+  }
+  .avatar-preview {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #ffffff;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    > div {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.all-phones {
+    background-image: url("../../assets//images/all-phones-bg.png");
+    background-size: cover;
+    height: 93vh;
+    position: relative;
+}
+.all-phones .all-phones-content {
+    position: absolute;
+    background-color: #26b356eb;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
