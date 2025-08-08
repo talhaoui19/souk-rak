@@ -54,7 +54,7 @@ const Page = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={`bg-[rgb(247_247_247)] ${
+            className={`bg-[rgb(247_247_247)] focus:border-none focus:outline-none focus:ring-1 focus:ring-[var(--main-color)] ${
               !email && buttonClicked ? "border-[1px] border-[red]" : ""
             } w-[100%] h-[55px] rounded-[8px] pr-[55px]`}
             placeholder="أكتب بريدك الالكتروني هنا"

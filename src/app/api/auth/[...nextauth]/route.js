@@ -1,40 +1,16 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
-import bcrypt from "bcrypt";
-
-import { connectMongoDB } from "../../../../lib/db";
-import UserModal from "../../../../lib/models/user";
+import { connectMongoDB } from "@/lib/db";
+import UserModal from "@/lib/models/user";
+import { credentialsAuthorize } from "@/lib/auth/credentialsAuthorize";
 
 export const authOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {},
-      async authorize(credentials, req) {
-        await connectMongoDB();
-
-        const user = await UserModal.findOne({
-          email: credentials.email,
-        });
-
-        if (!user) {
-          return null;
-        }
-
-        const match = await bcrypt.compare(credentials.password, user.password);
-
-        if (!match) {
-          return null;
-        }
-
-        return user;
-      },
-    }),
-    FacebookProvider({
-      clientId: process.env.FACEBOOK_CLIENT_ID,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+      authorize: credentialsAuthorize,
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -44,38 +20,32 @@ export const authOptions = {
 
   secret: process.env.NEXTAUTH_SECRET,
 
-  pages: {
-    signIn: "/login",
-  },
-  session: {
-    jwt: true,
-  },
+  pages: { signIn: "/login" },
+
+  session: { strategy: "jwt" },
+
   callbacks: {
     async jwt({ token, user, account }) {
       await connectMongoDB();
 
       if (account && user) {
-        const existingUser = await UserModal.findOne({ email: user.email });
+        let existingUser = await UserModal.findOne({ email: user.email });
 
         if (!existingUser) {
-          const newUser = new UserModal({
+          existingUser = await UserModal.create({
             email: user.email,
-            name: user.name || "اسم افتراضي",
+            name: user.name,
             phone: "",
             image: user.image || "",
           });
-          await newUser.save();
-          token.user = newUser;
         } else {
-          existingUser.image = user.image || existingUser.image; // تحديث الصورة فقط إذا كانت موجودة
+          existingUser.image = user.image || existingUser.image;
           await existingUser.save();
-          token.user = existingUser;
         }
-      } else if (token.user && token.user.email) {
-        const updatedUser = await UserModal.findOne({
-          email: token.user.email,
-        });
-        token.user = updatedUser;
+
+        token.user = existingUser;
+      } else if (token.user?.email) {
+        token.user = await UserModal.findOne({ email: token.user.email });
       }
 
       return token;
@@ -88,9 +58,8 @@ export const authOptions = {
   },
 
   events: {
-    error: async (message) => {
+    error: (message) => {
       console.error("NextAuth error:", message);
-      logError("NextAuth error: ", message);
     },
   },
 };
