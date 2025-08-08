@@ -1,4 +1,4 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOptions";
 import { UpdateProfileImageCard } from "@/components";
 import { getServerSession } from "next-auth";
 
