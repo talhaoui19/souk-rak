@@ -1,8 +1,8 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { connectMongoDB } from "@/lib/db";
-import UserModal from "@/lib/models/user";
-import { credentialsAuthorize } from "@/lib/auth/credentialsAuthorize";
+import { connectMongoDB } from "./db";
+import UserModal from "./models/user";
+import { credentialsAuthorize } from "./auth/credentialsAuthorize";
 
 export const authOptions = {
   providers: [

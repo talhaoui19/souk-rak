@@ -1,8 +1,5 @@
-
-
+import { EditPasswordForm } from "@/src/components";
 import Image from "next/image";
-import { newpassword } from "../../../assets/index";
-import { EditPasswordForm } from "@/components";
 
 const Page = () => {
   return (

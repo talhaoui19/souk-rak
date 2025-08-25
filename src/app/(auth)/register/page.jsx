@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { loginlogo } from "../../../assets";
-import { RegisterForm, FeaturesList } from "@/components";
+import { loginlogo } from "@/src/assets";
+import { FeaturesList, RegisterForm } from "@/src/components";
 
 const RegisterPage = () => {
   return (

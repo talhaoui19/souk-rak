@@ -1,4 +1,4 @@
-/* CARIO FONT */
+/* ALMARI FONT */
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
@@ -28,7 +28,8 @@ html,
 }
 
 body {
-  background-color: #fbfafa;
+  /* background-color: #fbfafa; */
+  padding: 0 !important;
 }
 
 a {
@@ -63,12 +64,14 @@ select {
     width: 750px;
   }
 }
+
 /* Medium */
 @media (min-width: 992px) {
   .container {
     width: 970px;
   }
 }
+
 /* Large */
 @media (min-width: 1200px) {
   .container {
@@ -116,16 +119,20 @@ select {
   input::placeholder {
     @apply text-[15px];
   }
+
   .input::placeholder {
     @apply text-[white] pr-2;
   }
+
   select {
     @apply appearance-none;
     -webkit-appearance: none;
   }
+
   .--spr {
     @apply w-5 h-5 m-[2px] mx-auto rounded-full border-[3px] border-solid border-white border-r-transparent animate-spin;
   }
+
   .--but {
     @apply bg-[#26B356] text-[14px] font-bold text-white w-[370px] h-[54px] rounded-[10px];
   }
@@ -143,14 +150,17 @@ select {
 .avatar-upload {
   position: relative;
   max-width: 205px;
+
   .avatar-edit {
     position: absolute;
     left: 35px;
     z-index: 1;
     bottom: 10px;
+
     input {
       display: none;
-      + a {
+
+      +a {
         width: 34px;
         height: 34px;
         margin-bottom: 0;
@@ -161,6 +171,7 @@ select {
         cursor: pointer;
         font-weight: normal;
         transition: all 0.2s ease-in-out;
+
         &:hover {
           background: #f1f1f1;
           border-color: #d6d6d6;
@@ -168,6 +179,7 @@ select {
       }
     }
   }
+
   .avatar-preview {
     width: 180px;
     height: 180px;
@@ -175,7 +187,8 @@ select {
     border-radius: 100%;
     border: 6px solid #ffffff;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-    > div {
+
+    >div {
       width: 100%;
       height: 100%;
       border-radius: 100%;

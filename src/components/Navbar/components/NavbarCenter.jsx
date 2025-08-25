@@ -70,7 +70,8 @@ const NavbarCenter = ({ session }) => {
             </div>
           </div>
           <div className={`navbar-user-palance ${styles.flexCenter} gap-3`}>
-            <div
+            <Link
+              href={"/cart"}
               className={`navbar-user-img relative bg-[#F4F6F8] ${styles.flexCenter} w-[48px] h-[48px] rounded-full`}
             >
               <Image
@@ -79,10 +80,10 @@ const NavbarCenter = ({ session }) => {
                 className="absolute top-[-2px] right-[-2px]"
               />
               <Image src={store} alt="store" />
-            </div>
+            </Link>
             <div className={`navbar-user-contnet ${styles.flexColumn} gap-1`}>
-              <span className="text-[#9E9E9E] text-[14px]"> تسجيل الدخول</span>
-              <h4 className="text-[15px] font-bold"> 2.200 رس</h4>
+              <span className="text-[#9E9E9E] text-[14px]"> سلة المشتريات</span>
+              <h4 className="text-[15px] font-bold"> 2.200 دج</h4>
             </div>
           </div>
         </div>

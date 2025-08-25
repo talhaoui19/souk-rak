@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { password, egybt } from "../../../assets/index";
+import { password } from "@/src/assets";
 import Link from "next/link";
 
 const PasswordPage = () => {
@@ -28,11 +28,6 @@ const PasswordPage = () => {
               className="bg-[rgb(247_247_247)] w-[100%] h-[55px] rounded-[8px] pr-[55px]"
               placeholder="أكتب بريدك الالكتروني هنا"
             />
-            {/* <Image
-              src={egybt}
-              alt="egybt-img"
-              className="absolute top-[18px] right-[15px]"
-            /> */}
           </div>
         </div>
         <div className="mt-[15px]">
@@ -47,7 +42,10 @@ const PasswordPage = () => {
         <div>
           <h4 className="text-[#919EAB] text-[16px] font-semibold mt-[25px] mb-[10px] text-center">
             ليس لديك حساب فى سوق راك ؟{" "}
-            <Link href="/register" className="text-[var(--main-color)] hover:underline cursor-pointer">
+            <Link
+              href="/register"
+              className="text-[var(--main-color)] hover:underline cursor-pointer"
+            >
               إنشاء حساب جديد
             </Link>
           </h4>

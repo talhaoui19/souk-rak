@@ -1,10 +1,11 @@
 "use client";
-import { lock, user } from "@/assets";
+
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import MailIcon from "../icons/MailIcon";
 import { toast } from "react-toastify";
+import { user, lock } from "@/src/assets";
 
 const RegisterForm = () => {
   const [name, setName] = useState();

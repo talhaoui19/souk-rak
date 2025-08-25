@@ -1,6 +1,4 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const models = mongoose.models;
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
@@ -8,6 +6,13 @@ const userSchema = new mongoose.Schema(
     email: String,
     phone: String,
     password: String,
+    address: String,
+    shippingAddress: {
+      shippingUserName: String,
+      shippingCountry: String,
+      shippingPhone: String,
+      shippingAddress: String,
+    },
     image: String,
     resetPasswordToken: String,
     resetPasswordExpires: Date,
@@ -21,6 +26,4 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const UserModal = models.User || mongoose.model("User", userSchema);
-
-module.exports = UserModal;
+export default mongoose.models.User || mongoose.model("User", userSchema);

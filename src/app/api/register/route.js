@@ -1,7 +1,7 @@
-import UserModal from "../../../lib/models/user";
-import { connectMongoDB } from "../../../lib/db";
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
+import { connectMongoDB } from "@/src/lib/db";
+import User from "@/src/lib/models/user";
 
 export async function POST(request) {
   try {
@@ -12,7 +12,7 @@ export async function POST(request) {
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(obj.password, salt);
 
-    await UserModal.create({
+    await User.create({
       name: obj.name,
       email: obj.email,
       phone: obj.phone,

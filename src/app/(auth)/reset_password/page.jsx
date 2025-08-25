@@ -1,7 +1,7 @@
+import { password } from "@/src/assets";
+import { ResetPasswordRequestForm } from "@/src/components";
 import Image from "next/image";
-import { password } from "../../../assets/index";
 import Link from "next/link";
-import { ResetPasswordRequestForm } from "@/components";
 
 export default function PasswordResetRequest() {
   return (

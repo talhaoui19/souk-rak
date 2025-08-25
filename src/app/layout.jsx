@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import AuthProvider from "./providers/AuthProvider";
 
 export const metadata = {
-  title: "Souk Rak",
+  title: "Souk Rak | سوق راك",
   description: "ًWelcome To Souk-rak Ecommerce Website",
 };
 

@@ -1,7 +1,7 @@
-import styles from "../../style";
 import Image from "next/image";
-import { NewProductss } from "../../constants/index";
-import { newImage, arrowDown, starProduct,heart  } from "../../assets/index";
+import { newImage, arrowDown, starProduct, heart } from "@/src/assets";
+import { NewProductss } from "@/src/constants";
+import styles from "@/src/style";
 
 const NewProducts = () => {
   return (

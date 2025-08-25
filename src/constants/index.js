@@ -35,38 +35,63 @@ export const navLinks = [
   {
     id: "home",
     title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
     icon: category,
+    submenu: {
+      brands: ["Samsung", "Apple", "Huawei", "Oppo"],
+      categories: ["كل الموبايلات", "التابلت", "اكسسوارات"],
+    },
   },
   {
     id: "about",
+    link: "/product_category/mobile_tablet",
     title: "موبايل و تابلت",
+    submenu: {
+      brands: ["Samsung", "Apple", "Huawei", "Oppo"],
+      categories: ["كل الموبايلات", "التابلت", "اكسسوارات"],
+    },
   },
   {
     id: "services",
+    link: "/product_category/smart_tv",
     title: "تلفزيونات",
+    submenu: {
+      brands: ["Samsung", "Apple", "Huawei", "Oppo"],
+      categories: ["كل الموبايلات", "التابلت", "اكسسوارات"],
+    },
   },
   {
     id: "best-doctors",
+    link: "/product_category/smart_watch",
     title: "ساعات",
+    submenu: {
+      brands: ["Samsung", "Apple", "Huawei", "Oppo"],
+      categories: ["كل الموبايلات", "التابلت", "اكسسوارات"],
+    },
   },
   {
     id: "blog",
+    link: "/product_category/mobile_tablet",
     title: "لاب توب",
   },
   {
     id: "contact",
+    link: "/product_category/mobile_tablet",
     title: "مستلزمات المنزل",
   },
   {
     id: "contact",
+    link: "/product_category/mobile_tablet",
     title: " المطبخ",
   },
   {
     id: "contact",
+    link: "/product_category/mobile_tablet",
     title: "الأثاث",
   },
   {
     id: "contact",
+    link: "/product_category/mobile_tablet",
     title: "اجهزة رياضية",
   },
 ];

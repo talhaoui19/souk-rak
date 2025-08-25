@@ -2,9 +2,10 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { password } from "@/assets";
+
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { password } from "@/src/assets";
 
 const Page = ({ user }) => {
   const [image, setImage] = useState(user.image || "");

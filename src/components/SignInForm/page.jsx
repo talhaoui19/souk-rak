@@ -6,7 +6,8 @@ import { toast } from "react-toastify";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import MailIcon from "../icons/MailIcon";
-import { lock } from "@/assets";
+import { lock } from "@/src/assets";
+
 
 const SignInForm = () => {
   const [email, setEmail] = useState();

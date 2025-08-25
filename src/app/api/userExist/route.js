@@ -1,5 +1,5 @@
-import { connectMongoDB } from "@/lib/db";
-import UserModal from "@/lib/models/user";
+import { connectMongoDB } from "@/src/lib/db";
+import User from "@/src/lib/models/user";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
@@ -8,9 +8,7 @@ export async function POST(request) {
 
     await connectMongoDB();
 
-    const user = await UserModal.findOne({ email: obj.email }).select(
-      "-password"
-    );
+    const user = await User.findOne({ email: obj.email }).select("-password");
 
     // if (!user) {
     //   return NextResponse.json(
