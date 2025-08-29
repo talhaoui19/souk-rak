@@ -26,9 +26,26 @@ const CartProducts = ({
                 <h3 className="font-semibold text-[#174086] text-base">
                   {item.productId.name}
                 </h3>
-                <p className="text-green-600 text-base font-bold mt-1">
-                  {item.productId.price} دج
-                </p>
+                <div className="mt-2">
+                  <span
+                    className={`text-base font-semibold ml-2 ${
+                      item.productId.discount > 0
+                        ? "line-through text-[#CACACA]"
+                        : "text-[var(--main-color)]"
+                    }`}
+                  >
+                    {item.productId.price}.00 دج{" "}
+                  </span>
+                  {item.productId.discount > 0 && (
+                    <span className="text-[var(--main-color)] text-base font-semibold">
+                      {(
+                        item.productId.price -
+                        (item.productId.price * item.productId.discount) / 100
+                      ).toFixed(2)}{" "}
+                      دج
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </div>

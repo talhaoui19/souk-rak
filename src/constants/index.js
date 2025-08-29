@@ -28,6 +28,15 @@ import {
   Star,
   activity,
   login,
+  lg,
+  samsung,
+  realme,
+  infinix,
+  apple,
+  hwawi,
+  honor,
+  nokia,
+  oppo,
 } from "../assets/index";
 
 // START NAVBAR COMPONENT LINKS
@@ -262,3 +271,62 @@ export const NewProductss = [
     title: "بطاقات الدفع",
   },
 ];
+
+// START NAVBAR COMPONENT LINKS
+export const brandsLinks = [
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: lg,
+  },
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: samsung,
+  },
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: realme,
+  },
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: infinix,
+  },
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: apple,
+  },
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: hwawi,
+  },
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: honor,
+  },
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: nokia,
+  },
+  {
+    id: "home",
+    title: "ماركات مشهورة",
+    link: "/product_category/mobile_tablet",
+    image: oppo,
+  },
+];
+// END NAVBAR COMPONENT LINKS

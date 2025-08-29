@@ -5,53 +5,26 @@ import {
   HeartIcon,
   RemoveCountIcon,
   StarsIcon,
+  WishHeartIcon,
 } from "@/src/components/icons";
 import CartIcon from "@/src/components/icons/Cart";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
+import { useWishlist } from "@/src/hooks/useWishlist";
+import { useCart } from "@/src/hooks/useCart";
+import { useIsNewProduct } from "@/src/hooks/useIsNewProduct";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, cartItems }) => {
   const [productCount, setProductCount] = useState(1);
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
-  const [isLoading, setisLoading] = useState(false);
+  const [inWishlist, setInWishlist] = useState(product.isFavorite);
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
-
-  const router = useRouter();
-  const handleAddToCart = async () => {
-    setisLoading(true);
-
-    try {
-      const res = await fetch("/api/cart/add/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          productId: product._id,
-          quantity: productCount,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        console.log(data.error || "حدث خطأ");
-        return;
-      }
-
-      toast.success("تمت إضافة المنتج للسلة ", { position: "top-left" });
-      setisLoading(false);
-    } catch (error) {
-      console.error(error);
-      toast.error("مشكلة في الإتصال بالسيرفر");
-    }
-  };
+  const isNew = useIsNewProduct(product.createdAt, 3);
+  const { isLoading, handleAddToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, wishIsLoading } = useWishlist();
 
   return (
     <div className="product_info flex gap-6 p-[80px]">
@@ -68,9 +41,11 @@ const ProductCard = ({ product }) => {
           />
         </div>
 
-        <div className="absolute top-3 left-5 bg-[#56B53F] text-white text-sm font-bold w-[61px] h-[36px] flex items-center justify-center rounded-[8px]">
-          جديد
-        </div>
+        {isNew && (
+          <div className="absolute top-3 left-5 bg-[#56B53F] text-white text-sm font-bold w-[61px] h-[36px] flex items-center justify-center rounded-[8px]">
+            جديد
+          </div>
+        )}
 
         <div className="product_images flex items-center gap-2 absolute bottom-8">
           {product.images.map((image, index) => {
@@ -191,7 +166,7 @@ const ProductCard = ({ product }) => {
         <div className="flex gap-2 mt-6">
           <button
             className="--but flex items-center justify-center gap-2"
-            onClick={handleAddToCart}
+            onClick={() => handleAddToCart(product, productCount, cartItems)}
           >
             {isLoading ? (
               <div className="--spr" />
@@ -202,8 +177,27 @@ const ProductCard = ({ product }) => {
               </>
             )}
           </button>
-          <button className="--but w-[174px] flex items-center justify-center bg-transparent border border-[#CDCDCD]">
-            <HeartIcon />
+
+          <button
+            className="--but w-[174px] flex items-center justify-center bg-transparent border border-[#CDCDCD]"
+            onClick={async () => {
+              if (inWishlist) {
+                await removeFromWishlist(product._id);
+                setInWishlist(false);
+              } else {
+                await addToWishlist(product._id);
+                setInWishlist(true);
+              }
+            }}
+            disabled={wishIsLoading}
+          >
+            {wishIsLoading ? (
+              <div className="--spr border-[var(--main-color)] border-r-white" />
+            ) : inWishlist ? (
+              <WishHeartIcon />
+            ) : (
+              <HeartIcon />
+            )}
           </button>
         </div>
       </div>

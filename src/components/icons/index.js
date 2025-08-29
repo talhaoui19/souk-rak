@@ -11,6 +11,7 @@ import RemoveCountIcon from "./Remove";
 import StarsIcon from "./Stars";
 import ShareIcon from "./Share";
 import DeleteIcon from "./Delete";
+import { WishIcon, WishHeartIcon } from "./Wish";
 
 export {
   EyeIcon,
@@ -26,4 +27,6 @@ export {
   StarsIcon,
   ShareIcon,
   DeleteIcon,
+  WishIcon,
+  WishHeartIcon,
 };

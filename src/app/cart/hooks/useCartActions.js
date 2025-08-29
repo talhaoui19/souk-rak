@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export const useCartActions = (setItems) => {
   const router = useRouter();
@@ -8,6 +9,7 @@ export const useCartActions = (setItems) => {
 
   const updateQuantity = async (item, newQty) => {
     setIsLoading(true);
+
     try {
       await fetch("/api/cart/update", {
         method: "PUT",
@@ -19,7 +21,7 @@ export const useCartActions = (setItems) => {
       });
 
       setItems((prev) =>
-        prev.map((p) => (p.id === item.id ? { ...p, quantity: newQty } : p))
+        prev.map((p) => (p._id === item._id ? { ...p, quantity: newQty } : p))
       );
 
       router.refresh();
@@ -35,6 +37,15 @@ export const useCartActions = (setItems) => {
 
   const handleIncreaseQuantity = async (item) => {
     const newQty = item.quantity + 1;
+    const maxStock = item.productId.quantity;
+
+    console.log("المخزون:", maxStock, "الكمية المطلوبة:", newQty);
+
+    if (newQty > maxStock) {
+      toast.error(" لا يمكنك طلب أكثر من الكمية المتوفرة في المخزون");
+      return;
+    }
+
     await updateQuantity(item, newQty);
   };
 
@@ -53,7 +64,7 @@ export const useCartActions = (setItems) => {
       });
 
       if (res.ok) {
-        setItems((prev) => prev.filter((p) => p.id !== item.id));
+        setItems((prev) => prev.filter((p) => p._id !== item._id));
         router.refresh();
       } else {
         const data = await res.json();

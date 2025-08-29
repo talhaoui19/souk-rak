@@ -4,7 +4,7 @@ import Header from "./Header";
 import ProductCard from "./ProductCard";
 import { ShareIcon } from "@/src/components/icons";
 
-const ProductContent = ({ product }) => {
+const ProductContent = ({ product ,cartItems }) => {
   const [activeTab, setActiveTab] = useState("description");
 
   const tabs = [
@@ -17,7 +17,7 @@ const ProductContent = ({ product }) => {
       <Header product={product} />
 
       <div className="container">
-        <ProductCard product={product} />
+        <ProductCard product={product} cartItems={cartItems} />
       </div>
 
       <span className="block w-full bg-[#F4F6F8] h-[1px]" />

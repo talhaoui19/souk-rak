@@ -118,8 +118,23 @@ import login from "./images/settingsBar/login.png";
 // END SETTINGS BAR IMAGES
 import profileImage from "./images/Profile/profile-img.jpg";
 import editPassword from "./images/Profile/edit-password.png";
+import cart_image from "./images/cart_image.png";
+import wishHeart from "./images/wish_heart.png";
+import emptyWishList from "./images/empty_wishlist.png";
 
-import cart_image from './images/cart_image.png';
+
+// START BRANDS IMAGES
+
+import apple from "./images/Brands/apple.png";
+import honor from "./images/Brands/honor.png";
+import hwawi from "./images/Brands/hwawi.png";
+import infinix from "./images/Brands/infinix.png";
+import lg from "./images/Brands/lg.png";
+import nokia from "./images/Brands/nokia.png";
+import oppo from "./images/Brands/oppo.png";
+import realme from "./images/Brands/realme.png";
+import samsung from "./images/Brands/samsung.png";
+
 export {
   profileImage,
   editPassword,
@@ -216,5 +231,16 @@ export {
   Star,
   activity,
   login,
-  cart_image
+  cart_image,
+  emptyWishList,
+  wishHeart,
+  apple,
+  honor,
+  hwawi,
+  infinix,
+  lg,
+  nokia,
+  oppo,
+  realme,
+  samsung,
 };

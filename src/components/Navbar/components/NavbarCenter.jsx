@@ -2,10 +2,11 @@
 
 import styles from "../../../style";
 import Image from "next/image";
-import { logo, search, profile, store, notif } from "../../../assets/index";
+import { logo, search, profile, store } from "../../../assets/index";
 import Link from "next/link";
+import { WishIcon } from "../../icons";
 
-const NavbarCenter = ({ session }) => {
+const NavbarCenter = ({ session, cartCount, totalPrice, wishlistCount }) => {
   return (
     <div className="navbar-center h-[90px]">
       <div className={`container ${styles.flexBetween} py-[15px] mt-[10px]`}>
@@ -71,19 +72,28 @@ const NavbarCenter = ({ session }) => {
           </div>
           <div className={`navbar-user-palance ${styles.flexCenter} gap-3`}>
             <Link
+              href={"/wishlist"}
+              className={`navbar-user-img relative bg-[#F4F6F8] ${styles.flexCenter} w-[48px] h-[48px] rounded-full`}
+            >
+              <span className="absolute w-5 h-5 bg-[var(--main-color)] rounded-full top-[-6px] right-[-2px] text-xs text-[#ffff] flex items-center justify-center">
+                {wishlistCount}
+              </span>
+              <WishIcon />
+            </Link>
+          </div>
+          <div className={`navbar-user-palance ${styles.flexCenter} gap-3`}>
+            <Link
               href={"/cart"}
               className={`navbar-user-img relative bg-[#F4F6F8] ${styles.flexCenter} w-[48px] h-[48px] rounded-full`}
             >
-              <Image
-                src={notif}
-                alt="notif"
-                className="absolute top-[-2px] right-[-2px]"
-              />
+              <span className="absolute w-5 h-5 bg-[var(--main-color)] rounded-full top-[-6px] right-[-2px] text-xs text-[#ffff] flex items-center justify-center">
+                {cartCount}
+              </span>
               <Image src={store} alt="store" />
             </Link>
             <div className={`navbar-user-contnet ${styles.flexColumn} gap-1`}>
               <span className="text-[#9E9E9E] text-[14px]"> سلة المشتريات</span>
-              <h4 className="text-[15px] font-bold"> 2.200 دج</h4>
+              <h4 className="text-[15px] font-bold"> {totalPrice}.00 دج</h4>
             </div>
           </div>
         </div>

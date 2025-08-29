@@ -19,6 +19,7 @@ import ResetPasswordForm from "./ResetPasswordForm/page";
 import NewPasswordPage from "./NewPasswordPage/NewPasswordPage";
 import Testimonials from "./Testimonials/Testimonials";
 import Newsletter from "./News Letter/Newsletter";
+import ProductCard from "./ProductCard/page";
 import Footer from "./Footer/Footer";
 
 export {
@@ -43,5 +44,6 @@ export {
   Products,
   NowProducts,
   NewProducts,
+  ProductCard,
   Footer,
 };

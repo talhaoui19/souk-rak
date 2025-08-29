@@ -35,6 +35,7 @@ const Categories = () => {
             <figure>
               <Image
                 src={categorie1}
+                quality={100}
                 alt="categorie1"
                 className="w-[72px] h-[72px]"
               />
@@ -49,6 +50,7 @@ const Categories = () => {
             <figure>
               <Image
                 src={categorie2}
+                quality={100}
                 alt="categorie2"
                 className="w-[76px] h-[76px]"
               />
@@ -63,6 +65,7 @@ const Categories = () => {
             <figure>
               <Image
                 src={categorie3}
+                quality={100}
                 alt="categorie3"
                 className="w-[82px] h-[54px]"
               />
@@ -77,6 +80,7 @@ const Categories = () => {
             <figure>
               <Image
                 src={categorie4}
+                quality={100}
                 alt="categorie4"
                 className="w-[73px] h-[73px]"
               />
@@ -192,7 +196,11 @@ const Categories = () => {
                 احترافية للصحة
               </p>
             </div>
-            <Image src={watch} alt="watch-img" className="w-[207px] h-[207px]" />
+            <Image
+              src={watch}
+              alt="watch-img"
+              className="w-[207px] h-[207px]"
+            />
           </div>
           <div className="absolute bottom-5">
             <a className="text-[17px] font-semibold text-[#3B3C3F] p-5">
