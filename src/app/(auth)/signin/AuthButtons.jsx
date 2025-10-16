@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { loginGoogle } from "../../../assets/index";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { loginGoogle } from "@/src/assets";
 
 const AuthButtons = () => {
   const [isLoading, setIsLoading] = useState(false);

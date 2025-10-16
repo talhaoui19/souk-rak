@@ -1,5 +1,5 @@
-import NavbarTop from "./components/NavbarTop";
-import NavbarCenter from "./components/NavbarCenter";
-import NavbarEnd from "./components/NavbarEnd";
-import NavbarAnnouncement from "./components/NavbarAnnouncement";
+import NavbarTop from "./ui/NavbarTop";
+import NavbarCenter from "./ui/NavbarCenter";
+import NavbarEnd from "./ui/NavbarEnd";
+import NavbarAnnouncement from "./ui/NavbarAnnouncement";
 export { NavbarTop, NavbarCenter, NavbarEnd, NavbarAnnouncement };

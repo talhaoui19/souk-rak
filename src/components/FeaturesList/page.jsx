@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { shipping, time, visa, hour } from "@/assets";
+import { shipping, time, visa, hour } from "@/src/assets";
 
 const FeaturesList = () => {
   return (

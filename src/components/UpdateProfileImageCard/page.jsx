@@ -2,9 +2,10 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { password } from "@/assets";
+
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import { password } from "@/src/assets";
 
 const Page = ({ user }) => {
   const [image, setImage] = useState(user.image || "");
@@ -119,7 +120,8 @@ const Page = ({ user }) => {
           className="hidden"
           disabled={isUploading}
         />
-        <label
+        <div className="flex items-center gap-2">
+          <label
           htmlFor="profile-image-upload"
           className="bg-[#26B356] block w-full text-center px-[20px] py-[16px] text-[14px] font-bold text-white rounded-[10px] cursor-pointer"
         >
@@ -132,10 +134,11 @@ const Page = ({ user }) => {
         <button
           onClick={handleImageDelete}
           disabled={isDelete}
-          className="bg-red-500 block w-full text-center px-[20px] py-[16px] text-[14px] font-bold text-white rounded-[10px] mt-4"
+          className="bg-red-500 block w-full text-center px-[20px] py-[16px] text-[14px] font-bold text-white rounded-[10px]"
         >
           {isDelete ? <div className="--spr"></div> : "حذف الصورة الحالية"}
         </button>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
-import { connectMongoDB } from "@/lib/db";
-import UserModal from "@/lib/models/user";
+
+import User from '@/src/lib/models/user';
+import { connectMongoDB } from "@/src/lib/db";
 
 export async function POST(req) {
   try {
@@ -7,7 +8,7 @@ export async function POST(req) {
 
     const { email } = await req.json();
 
-    const updatedUser = await UserModal.findOneAndUpdate(
+    const updatedUser = await User.findOneAndUpdate(
       { email },
       { image: "" },
       { new: true }

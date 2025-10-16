@@ -1,4 +1,4 @@
-const PhooneIcon = (props) => (
+const PhoneIcon = (props) => (
   <svg
     width="19"
     height="19"
@@ -17,4 +17,4 @@ const PhooneIcon = (props) => (
   </svg>
 );
 
-export default PhooneIcon;
+export default PhoneIcon;

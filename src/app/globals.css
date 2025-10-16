@@ -1,4 +1,4 @@
-/* CARIO FONT */
+/* ALMARI FONT */
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
@@ -29,6 +29,7 @@ html,
 
 body {
   background-color: #fbfafa;
+  padding: 0 !important;
 }
 
 a {
@@ -63,12 +64,14 @@ select {
     width: 750px;
   }
 }
+
 /* Medium */
 @media (min-width: 992px) {
   .container {
     width: 970px;
   }
 }
+
 /* Large */
 @media (min-width: 1200px) {
   .container {
@@ -116,18 +119,30 @@ select {
   input::placeholder {
     @apply text-[15px];
   }
+
   .input::placeholder {
     @apply text-[white] pr-2;
   }
+
   select {
     @apply appearance-none;
     -webkit-appearance: none;
   }
+
   .--spr {
     @apply w-5 h-5 m-[2px] mx-auto rounded-full border-[3px] border-solid border-white border-r-transparent animate-spin;
   }
+
   .--but {
-    @apply bg-[#26B356] text-[14px] font-bold text-white w-[370px] h-[54px] rounded-[10px];
+    @apply bg-[#26B356] text-[14px] font-bold text-white w-[370px] h-[54px] rounded-[10px] flex items-center justify-center;
+  }
+
+  .--input {
+    @apply bg-[#f5f5f5] rounded-[8px] pr-[55px] focus:border-none focus:outline-none focus:ring-1 focus:ring-[var(--main-color)];
+  }
+
+  .--label {
+    @apply text-[#174086] text-[17px] font-semibold;
   }
 }
 
@@ -143,13 +158,16 @@ select {
 .avatar-upload {
   position: relative;
   max-width: 205px;
+
   .avatar-edit {
     position: absolute;
     left: 35px;
     z-index: 1;
     bottom: 10px;
+
     input {
       display: none;
+
       + a {
         width: 34px;
         height: 34px;
@@ -161,6 +179,7 @@ select {
         cursor: pointer;
         font-weight: normal;
         transition: all 0.2s ease-in-out;
+
         &:hover {
           background: #f1f1f1;
           border-color: #d6d6d6;
@@ -168,6 +187,7 @@ select {
       }
     }
   }
+
   .avatar-preview {
     width: 180px;
     height: 180px;
@@ -175,6 +195,7 @@ select {
     border-radius: 100%;
     border: 6px solid #ffffff;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+
     > div {
       width: 100%;
       height: 100%;
@@ -185,3 +206,51 @@ select {
     }
   }
 }
+
+@layer utilities {
+  .animate-submenu {
+    @apply opacity-100 translate-y-0 visible;
+  }
+}
+
+.range-slider::-webkit-slider-runnable-track {
+  background: var(--main-color);
+  height: 6px;
+  border-radius: 4px;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--main-color);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.dot {
+  background: #f1f1f1;
+  transition: all 0.3s ease;
+}
+.slick-dots li.slick-active .dot {
+  background: var(--main-color);
+  width: 19px;
+  height: 13px;
+}
+
+/* PROMOS COMPONENT */
+/* .categories .categorie-box-img {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.categories .air-puds {
+  background-image: url("../../assets/images/Categories/gradient1.png");
+  height: 100%;
+}
+
+.categories .watch {
+  background-image: url("../../assets/images/Categories/gradient2.png");
+  height: 100%;
+} */

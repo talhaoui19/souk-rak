@@ -14,8 +14,10 @@ import fire from "./images/Navbar/fire.png";
 // END NAVBAR IMAGES
 
 // START HERO IMAGES
-import hero from "./images/Hero/hero-bg.png";
-import heroTitle from "./images/Hero/hero-title.png";
+import hero1 from "./images/Hero/hero_product1.png";
+import hero2 from "./images/Hero/hero_product2.jpg";
+import hero3 from "./images/Hero/hero_product3.jpg";
+import hero4 from "./images/Hero/hero_product4.jpg";
 // END HERO IMAGES
 
 // START CATEGORIES IMAGES
@@ -118,8 +120,35 @@ import login from "./images/settingsBar/login.png";
 // END SETTINGS BAR IMAGES
 import profileImage from "./images/Profile/profile-img.jpg";
 import editPassword from "./images/Profile/edit-password.png";
+import cart_image from "./images/cart_image.png";
+import wishHeart from "./images/wish_heart.png";
+import emptyWishList from "./images/empty_wishlist.png";
+import emptyBox from "./images/empty_box.png";
 
-import cart_image from './images/cart_image.png';
+// START BRANDS IMAGES
+import apple from "./images/Brands/apple.png";
+import honor from "./images/Brands/honor.png";
+import hwawi from "./images/Brands/hwawi.png";
+import infinix from "./images/Brands/infinix.png";
+import lg from "./images/Brands/lg.png";
+import nokia from "./images/Brands/nokia.png";
+import oppo from "./images/Brands/oppo.png";
+import realme from "./images/Brands/realme.png";
+import samsung from "./images/Brands/samsung.png";
+
+// START CATEGORIES BRANDS IMAGES
+import appleLogo from "./images/Categories_Brand/apple.png";
+import asusLogo from "./images/Categories_Brand/asus.png";
+import dellLogo from "./images/Categories_Brand/dell.png";
+import hpLogo from "./images/Categories_Brand/hp.png";
+import lenevoLogo from "./images/Categories_Brand/lenevo.png";
+import lgLogo from "./images/Categories_Brand/lg.png";
+import microsoftLogo from "./images/Categories_Brand/microsoft.png";
+import samsungLogo from "./images/Categories_Brand/samsung.png";
+import sonyLogo2 from "./images/Categories_Brand/sony_2.png";
+import sonyLogo from "./images/Categories_Brand/sony.png";
+import xiaomiLogo from "./images/Categories_Brand/xiaomi.png";
+
 export {
   profileImage,
   editPassword,
@@ -135,8 +164,10 @@ export {
   category,
   arrow,
   fire,
-  hero,
-  heroTitle,
+  hero1,
+  hero2,
+  hero3,
+  hero4,
   basket,
   categorie1,
   categorie2,
@@ -216,5 +247,28 @@ export {
   Star,
   activity,
   login,
-  cart_image
+  cart_image,
+  emptyWishList,
+  emptyBox,
+  wishHeart,
+  apple,
+  honor,
+  hwawi,
+  infinix,
+  lg,
+  nokia,
+  oppo,
+  realme,
+  samsung,
+  appleLogo,
+  asusLogo,
+  dellLogo,
+  hpLogo,
+  lenevoLogo,
+  lgLogo,
+  microsoftLogo,
+  samsungLogo,
+  sonyLogo2,
+  sonyLogo,
+  xiaomiLogo,
 };

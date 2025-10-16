@@ -1,9 +1,8 @@
+import { authOptions } from "@/src/lib/authOptions";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/authOptions";
-import SettingsDropDown from "./components/SettingsDropDown";
-import { ProfileCard } from "@/components";
+import { Header, ProfileContent } from "./ui";
 
-export default async function ProfilePage() {
+export default async function ProfilePage({ searchParams }) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
@@ -12,11 +11,9 @@ export default async function ProfilePage() {
 
   return (
     <section>
-      <div className="py-[100px]">
-        <div className="container flex gap-4">
-          <SettingsDropDown />
-          <ProfileCard user={session.user} />
-        </div>
+      <Header searchParams={searchParams} />
+      <div className="py-[100px] container flex gap-4">
+        <ProfileContent user={session.user} searchParams={searchParams} />
       </div>
     </section>
   );

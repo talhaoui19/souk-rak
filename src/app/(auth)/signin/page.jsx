@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { loginlogo } from "../../../assets";
 import AuthButtons from "./AuthButtons";
-import { FeaturesList, SignInForm } from "@/components";
 import Link from "next/link";
+import { loginlogo } from "@/src/assets";
+import { FeaturesList, SignInForm } from "@/src/components";
 
 const LoginPage = async () => {
   return (

@@ -1,5 +1,5 @@
-import { authOptions } from "@/lib/authOptions";
-import { UpdateProfileImageCard } from "@/components";
+import { UpdateProfileImageCard } from "@/src/components";
+import { authOptions } from "@/src/lib/authOptions";
 import { getServerSession } from "next-auth";
 
 export default async function UpdateImage() {
