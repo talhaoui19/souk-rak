@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { connectMongoDB } from "@/src/lib/db";
-import Product from "@/src/lib/models/product";
 import { authOptions } from "@/src/lib/authOptions";
 import Cart from "@/src/lib/models/cart";
+import Product from "@/src/lib/models/Product";
 
 export async function POST(req) {
   try {
@@ -11,7 +11,10 @@ export async function POST(req) {
     const session = await getServerSession(authOptions);
 
     if (!session) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      return NextResponse.json(
+        { error: "يُرجى إنشاء حساب أو تسجيل الدخول للقيام بهذا الإجراء" },
+        { status: 401 }
+      );
     }
 
     const userId = session.user.id;

@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { connectMongoDB } from "../db";
 import UserModal from "../models/user";
 

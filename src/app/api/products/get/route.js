@@ -1,7 +1,5 @@
-// app/api/products/route.js
-
 import { connectMongoDB } from "@/lib/db";
-import Product from "@/lib/models/product";
+import Product from "@/src/lib/models/Product";
 
 export async function GET(req) {
   try {

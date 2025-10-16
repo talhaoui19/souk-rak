@@ -2,7 +2,7 @@ import { connectMongoDB } from "@/lib/db";
 import UserModal from "@/lib/models/user";
 import { NextResponse } from "next/server";
 import crypto from "crypto";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export async function POST(req) {
     try {

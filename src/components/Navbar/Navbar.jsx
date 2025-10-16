@@ -36,12 +36,11 @@ const Navbar = async () => {
       .lean();
 
     if (wishlist) {
-      wishlistCount = wishlist.items.length;
+      wishlistCount = wishlist.items.filter((item) => item.productId).length;
     }
   }
   return (
-    // START NAVBAR COMPONENT
-    <div className="navbar">
+    <section className="navbar">
       <NavbarAnnouncement />
       <NavbarTop />
       <NavbarCenter
@@ -51,8 +50,7 @@ const Navbar = async () => {
         totalPrice={totalPrice}
       />
       <NavbarEnd />
-    </div>
-    // END NAVBAR COMPONENT
+    </section>
   );
 };
 

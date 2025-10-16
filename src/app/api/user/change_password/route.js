@@ -3,10 +3,9 @@ import { connectMongoDB } from "@/lib/db";
 import UserModal from "@/lib/models/user";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/authOptions";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export async function POST(request) {
-  // التحقق من جلسة المستخدم
   const session = await getServerSession(authOptions);
   if (!session) {
     return NextResponse.json({ error: "غير مصرح" }, { status: 401 });

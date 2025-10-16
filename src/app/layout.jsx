@@ -1,4 +1,5 @@
 import "./globals.css";
+
 import { Navbar, Footer } from "../components/index";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

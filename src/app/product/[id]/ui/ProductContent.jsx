@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import Header from "./Header";
-import ProductCard from "./ProductCard";
 import { ShareIcon } from "@/src/components/icons";
+import ProductCard from "./ProductCard";
 
-const ProductContent = ({ product ,cartItems }) => {
+const ProductContent = ({ product, cartItems }) => {
   const [activeTab, setActiveTab] = useState("description");
 
   const tabs = [
@@ -12,6 +12,7 @@ const ProductContent = ({ product ,cartItems }) => {
     { key: "reviews", label: "المراجعات (5950)" },
     { key: "related", label: "المنتجات ذات الصلة" },
   ];
+
   return (
     <section id="product_page" className="bg-white">
       <Header product={product} />

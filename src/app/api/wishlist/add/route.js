@@ -7,9 +7,14 @@ export async function POST(req) {
   try {
     const session = await getServerSession(authOptions);
     if (!session) {
-      return new Response(JSON.stringify({ error: "يجب تسجيل الدخول" }), {
-        status: 401,
-      });
+      return new Response(
+        JSON.stringify({
+          error: "يُرجى إنشاء حساب أو تسجيل الدخول للقيام بهذا الإجراء",
+        }),
+        {
+          status: 401,
+        }
+      );
     }
 
     const { productId } = await req.json();

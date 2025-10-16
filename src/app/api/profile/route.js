@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { connectMongoDB } from "@/lib/db";
-import UserModal from "@/lib/models/user";
+import { connectMongoDB } from "@/src/lib/db";
+import User from "@/src/lib/models/user";
 import { getServerSession } from "next-auth";
-import { authOptions } from '@/lib/authOptions';
+import { authOptions } from "@/src/lib/authOptions";
 
 export async function POST(request) {
   const session = await getServerSession(authOptions);
@@ -15,7 +15,7 @@ export async function POST(request) {
 
   await connectMongoDB();
 
-  const updatedUser = await UserModal.findOneAndUpdate(
+  const updatedUser = await User.findOneAndUpdate(
     { email: email },
     { ...obj },
     { new: true }

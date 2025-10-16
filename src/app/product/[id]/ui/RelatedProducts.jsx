@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
+import Link from "next/link";
 import { newImage, arrowDown, starProduct, heart } from "@/src/assets";
 import styles from "@/src/style";
 import { connectMongoDB } from "@/src/lib/db";
-import Product from "@/src/lib/models/product";
-import Link from "next/link";
+import Product from "@/src/lib/models/Product";
 
 export default async function RelatedProducts({
   productCategory,

@@ -24,6 +24,7 @@ export const useWishlist = () => {
         const data = await res.json();
         toast.error(data.error || "خطأ أثناء الإضافة");
       }
+      return res; 
     } catch (err) {
       toast.error("خطأ في الاتصال بالسيرفر");
     } finally {
@@ -59,7 +60,7 @@ export const useWishlist = () => {
       const res = await fetch(`/api/wishlist/check?productId=${productId}`);
       if (res.ok) {
         const data = await res.json();
-        return data.inWishlist; 
+        return data.inWishlist;
       }
       return false;
     } catch {
